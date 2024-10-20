@@ -12,7 +12,7 @@ npm run build >/dev/null
 
 cd "$BASE"
 
-APPS=('main' 'check')
+APPS=('main' 'test')
 
 for app in "${APPS[@]}"
 do
