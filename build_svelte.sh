@@ -6,11 +6,16 @@ cd "$(dirname "$0")/"
 
 BASE="$(pwd)/app/"
 
-cd "${BASE}/svelte/index/"
+cd "${BASE}/svelte/"
 
 npm run build >/dev/null
 
 cd "$BASE"
 
-cp "${BASE}/svelte/index/dist/"main-*css "${BASE}/static/dist/index.css"
-cp "${BASE}/svelte/index/dist/"main-*js "${BASE}/static/dist/index.js"
+APPS=('main' 'check')
+
+for app in "${APPS[@]}"
+do
+  cp "${BASE}/svelte/dist/${app}"-*css "${BASE}/static/dist/${app}.css" 2>/dev/null || true
+  cp "${BASE}/svelte/dist/${app}"-*js "${BASE}/static/dist/${app}.js" 2>/dev/null || true
+done

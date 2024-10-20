@@ -22,10 +22,10 @@ then
   sudo apt-get install -y nodejs
 fi
 
-if ! [ -d app/svelte/index/node_modules/@sveltejs ]
+if ! [ -d app/svelte/node_modules/@sveltejs ]
 then
   echo ''
   echo '### Installing Svelte ###'
-  cd "$(pwd)/app/svelte/index"
+  cd "$(pwd)/app/svelte"
   npm install
 fi

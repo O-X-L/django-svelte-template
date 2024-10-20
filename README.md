@@ -16,8 +16,6 @@ Template example: [index.html](https://github.com/O-X-L/django-svelte-template/b
 
 ## Directory structure
 
-This template would use templates-specific Svelte-bundles. This is a personal preference. You can - of course - use a single one for all of them. 
-
 ```bash
 ├── app
 │   ├── app
@@ -30,9 +28,23 @@ This template would use templates-specific Svelte-bundles. This is a personal pr
 │   │   │   ├── index.css
 │   │   │   └── index.js
 │   │   └── img
-│   └── svelte
-│       └── index  # <== svelte src
+│   └── svelte  # <== svelte project
 ```
+
+----
+
+## Add a Svelte App
+
+* Add it to the `APPS` array inside `build_svelte.sh`
+* Create the app inside another directory in `app/svelte/src/`
+* Add the app to `app/svelte/vite.config.ts` (*input*)
+* Create the HTML element targeted in `app.ts` via `document.getElementById` in your Django template
+* Import the new js/css inside your Django template:
+
+  ```html
+  <link href="{% static 'dist/test.css' %}" rel="stylesheet" type="text/css">
+  <script src="{% static 'dist/test.js' %}"></script>
+  ```
 
 ----
 

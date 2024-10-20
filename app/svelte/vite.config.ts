@@ -19,7 +19,10 @@ export default defineConfig({
     emptyOutDir: true,
     outDir: resolve("./dist/"),
     rollupOptions: {
-      input: "./src/main.ts",
+      input: {
+        main: "./src/main/app.ts",
+        test: "./src/test/app.ts",
+      },
     },
   },
 })
