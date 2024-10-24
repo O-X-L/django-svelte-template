@@ -46,6 +46,29 @@ Template example: [index.html](https://github.com/O-X-L/django-svelte-template/b
   <script src="{% static 'dist/test.js' %}"></script>
   ```
 
+### Dev vs Production
+
+For beginners - just manually move the JS/CSS files from `app/static/dist_dev/` to `app/static/dist/` and commit them.
+
+The app will switch between `dist_dev` and `dist` when the `DEV_MODE` env-var is set.
+
+----
+
+## Run
+
+```
+pip install -r requirements.txt
+
+# run DEV mode:
+bash dev.sh
+
+# run production
+export WEB_HOSTNAMES=<FQDN>,<DOMAIN1>,<DOMAIN2>,<IP>
+export WEB_SECRET=<your-secret>
+
+python3 main.py
+```
+
 ----
 
 ## Scripts

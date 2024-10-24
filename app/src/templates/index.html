@@ -1,14 +1,23 @@
 {% load static %}
+{% load svelte %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% if dev_mode == true %}
+        <link href="{% static 'dist_dev/main.css' %}" rel="stylesheet" type="text/css">
+        {% else %}
         <link href="{% static 'dist/main.css' %}" rel="stylesheet" type="text/css">
+        {% endif %}
         <title>Django + Svelte = ❤️</title>
     </head>
 <body>
     <div id="app"></div>
+    {% if dev_mode == true %}
+    <script type="module" src="{% static 'dist_dev/main.js' %}"></script>
+    {% else %}
     <script type="module" src="{% static 'dist/main.js' %}"></script>
+    {% endif %}
 </body>
 </html>

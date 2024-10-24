@@ -3,7 +3,7 @@ app/svelte/*/package-lock.json
 app/svelte/*/vite.config.ts.time*
 app/svelte/*/node_modules/
 app/svelte/*/dist/
-app/static/dist/
+app/static/dist_dev/
 __pycache__
 .idea/
 venv/
