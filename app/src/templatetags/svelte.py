@@ -7,5 +7,4 @@ register = template.Library()
 
 @register.simple_tag
 def dev_mode() -> bool:
-    print('DEV', 'DEV_MODE' in environ)
-    return 'DEV_MODE' in environ
+    return 'DEV_MODE' in environ and str(environ['DEV_MODE']) == '1'
