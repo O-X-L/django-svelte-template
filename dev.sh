@@ -22,6 +22,6 @@ sleep 2
 echo '### Running svelte updater.. ###'
 while true
 do
-  sleep 2
+  sleep 1
   bash "$(pwd)/build_svelte.sh"
 done
