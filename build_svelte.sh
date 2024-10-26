@@ -25,7 +25,10 @@ do
   do
     if [[ "$app" != "$reference" ]]
     then
-      sed -i "s|from\"./${reference}-[^\.]*\.js\"|from\"./${reference}.js\"|g" "${DST_DIR}/${app}.js"
+      if [ -f "${DST_DIR}/${app}.js" ]
+      then
+        sed -i "s|from\"./${reference}-[^\.]*\.js\"|from\"./${reference}.js\"|g" "${DST_DIR}/${app}.js"
+      fi
     fi
   done
 done
