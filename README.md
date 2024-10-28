@@ -43,7 +43,7 @@ Template example: [index.html](https://github.com/O-X-L/django-svelte-template/b
 
   ```html
   <link href="{% static 'dist/test.css' %}" rel="stylesheet" type="text/css">
-  <script src="{% static 'dist/test.js' %}"></script>
+  <script type="module" src="{% static 'dist/test.js' %}"></script>
   ```
 
 ### Dev vs Production
