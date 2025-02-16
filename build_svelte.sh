@@ -14,7 +14,7 @@ cd "$BASE"
 DST_DIR="${BASE}/static/dist_dev"
 mkdir -p "$DST_DIR"
 
-APPS=('index' 'main' 'test')
+APPS=('index' 'main' 'test' 'legacy')
 
 for app in "${APPS[@]}"
 do
@@ -32,3 +32,4 @@ do
     fi
   done
 done
+echo "--- $(date +%H:%m:%S) UPDATED ---"

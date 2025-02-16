@@ -1,8 +1,8 @@
 app/db.sqlite3
-app/svelte/*/package-lock.json
-app/svelte/*/vite.config.ts.time*
-app/svelte/*/node_modules/
-app/svelte/*/dist/
+app/svelte/vite.config.ts.time*
+app/svelte/package-lock.json
+app/svelte/node_modules/
+app/svelte/dist/
 app/static/dist_dev/
 __pycache__
 .idea/
