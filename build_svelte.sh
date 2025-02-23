@@ -32,4 +32,4 @@ do
     fi
   done
 done
-echo "--- $(date +%H:%m:%S) UPDATED ---"
+echo "--- $(date +%H:%M:%S) UPDATED ---"
