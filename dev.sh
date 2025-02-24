@@ -5,6 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")/"
 
 rm -f "$(pwd)/app/static/dist_dev/"*
+rm -f '/tmp/.build_svelte_state.txt'
 
 export DEV_MODE=1
 export WEB_HOSTNAMES=localhost,127.0.0.1

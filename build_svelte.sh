@@ -5,6 +5,22 @@ set -euo pipefail
 cd "$(dirname "$0")/"
 
 BASE="$(pwd)/app/"
+STATE_FILE='/tmp/.build_svelte_state.txt'
+
+function check_src_changes() {
+  state="$(du -sb "${BASE}/svelte/src/")"
+  if [ -f "$STATE_FILE" ]
+  then
+    if [[ "$(cat "$STATE_FILE")" == "$state" ]]
+    then
+      # no changes
+      exit 0
+    fi
+  fi
+  echo "$state" > "$STATE_FILE"
+}
+
+check_src_changes
 
 cd "${BASE}/svelte/"
 
