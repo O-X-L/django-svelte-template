@@ -7,7 +7,7 @@ cd "$(dirname "$0")/"
 BASE="$(pwd)/app/"
 
 function check_src_changes() {
-  recent_changes="$(find "${BASE}/svelte/src/" -type f -mmin 1 | wc -l)"
+  recent_changes="$(find "${BASE}/svelte/src/" -type f -mmin -0.5 | wc -l)"
   if [[ "$recent_changes" == '0' ]]
   then
     exit 0
