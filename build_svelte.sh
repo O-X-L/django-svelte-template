@@ -5,19 +5,13 @@ set -euo pipefail
 cd "$(dirname "$0")/"
 
 BASE="$(pwd)/app/"
-STATE_FILE='/tmp/.build_svelte_state.txt'
 
 function check_src_changes() {
-  state="$(du -sb "${BASE}/svelte/src/")"
-  if [ -f "$STATE_FILE" ]
+  recent_changes="$(find "${BASE}/svelte/src/" -type f -mmin 1 | wc -l)"
+  if [[ "$recent_changes" == '0' ]]
   then
-    if [[ "$(cat "$STATE_FILE")" == "$state" ]]
-    then
-      # no changes
-      exit 0
-    fi
+    exit 0
   fi
-  echo "$state" > "$STATE_FILE"
 }
 
 check_src_changes
