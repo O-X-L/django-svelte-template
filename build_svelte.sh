@@ -4,10 +4,11 @@ set -euo pipefail
 
 cd "$(dirname "$0")/"
 
+NEW_CHANGES='0.03'  # 3sec; you may need to increase it if your build takes longer than
 BASE="$(pwd)/app/"
 
 function check_src_changes() {
-  recent_changes="$(find "${BASE}/svelte/src/" -type f -mmin -0.5 | wc -l)"
+  recent_changes="$(find "${BASE}/svelte/src/" -type f -mmin -${NEW_CHANGES} | wc -l)"
   if [[ "$recent_changes" == '0' ]]
   then
     exit 0

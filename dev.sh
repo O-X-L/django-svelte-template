@@ -21,6 +21,7 @@ BGPID=$!
 sleep 2
 
 echo '### Running svelte updater.. ###'
+touch "$(pwd)/app/svelte/src/.update_now"
 while true
 do
   bash "$(pwd)/build_svelte.sh"
