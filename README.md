@@ -35,7 +35,6 @@ Template example: [index.html](https://github.com/O-X-L/django-svelte-template/b
 
 ## Add a Svelte App
 
-* Add it to the `APPS` array inside `build_svelte.sh`
 * Create the app inside another directory in `app/svelte/src/`
 * Add the app to `app/svelte/vite.config.ts` (*input*)
 * Create the HTML element targeted in `app.ts` via `document.getElementById` in your Django template

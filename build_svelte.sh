@@ -25,14 +25,14 @@ cd "$BASE"
 DST_DIR="${BASE}/static/dist_dev"
 mkdir -p "$DST_DIR"
 
-APPS=('index' 'main' 'test' 'legacy')
+APPS=$(ls "${BASE}/svelte/dist/"*.js | rev | cut -d '/' -f 1 | rev | cut -d '-' -f1)
 
-for app in "${APPS[@]}"
+for app in $APPS
 do
   cp "${BASE}/svelte/dist/${app}"-*css "${DST_DIR}/${app}.css" 2>/dev/null || true
   cp "${BASE}/svelte/dist/${app}"-*js "${DST_DIR}/${app}.js" 2>/dev/null || true
 
-  for reference in "${APPS[@]}"
+  for reference in $APPS
   do
     if [[ "$app" != "$reference" ]]
     then
